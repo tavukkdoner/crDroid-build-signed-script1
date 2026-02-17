@@ -64,7 +64,7 @@ else
   exit 1
 fi
 
-cat <<EOF > vendor/lineage-priv/keys/BUILD.bazel
+cat <<EOF > ../../vendor/lineage-priv/keys/BUILD.bazel
 filegroup(
     name = "android_certificate_directory",
     srcs = glob([
@@ -90,11 +90,11 @@ android_app_certificate {
 
 EOF
   done < <(
-    find vendor/lineage-priv/keys -maxdepth 1 -type f -name "*.override.pk8" -printf "%f\n" \
+    find ../../vendor/lineage-priv/keys -maxdepth 1 -type f -name "*.override.pk8" -printf "%f\n" \
       | sed 's/\.override\.pk8$//' \
       | sort -u
   )
-} > vendor/lineage-priv/keys/Android.bp
+} > ../../vendor/lineage-priv/keys/Android.bp
 
 echo ""
 echo "✓ Done! Now build as usual."
