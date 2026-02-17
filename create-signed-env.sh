@@ -53,12 +53,12 @@ done
 
 ## Create vendor for keys
 rm ~/.android-certs/make_key
-rm -rf vendor/lineage-priv
-mkdir -p vendor/lineage-priv
-mv ~/.android-certs vendor/lineage-priv/keys
+rm -rf ../../vendor/lineage-priv
+mkdir -p ../../vendor/lineage-priv
+mv ~/.android-certs ../../vendor/lineage-priv/keys
 
 if [ -f keys.mk ]; then
-  cp keys.mk vendor/lineage-priv/keys/keys.mk
+  cp keys.mk ../../vendor/lineage-priv/keys/keys.mk
 else
   echo "ERROR: keys.mk not found next to create-signed-env.sh"
   exit 1
